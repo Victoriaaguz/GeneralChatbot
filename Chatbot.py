@@ -5,6 +5,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 chatbot = ChatBot(
     "QAbot", 
     storage_adapter="chatterbot.storage.SQLStorageAdapter",
+    logic_adapters=["chatterbot.logic.BestMatch"],
     database_uri="sqlite:///db.sqlite3" #stores chat history
     )
 
