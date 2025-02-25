@@ -47,5 +47,5 @@ Start chating :)
 ---
 
 ### **Created by:**
-- **Victoriaaguz & michaelagarciaa** **https://github.com/Victoriaaguz/GeneralChatbot.git**.
+- **Victoriaaguz & michaelagarciaa** 
 - **Developed by Victoria Guzman & Michael Garcia**.
