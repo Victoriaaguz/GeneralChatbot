@@ -36,7 +36,7 @@ source chatbot_env/bin/activate # for macOS/Linux
 
 ### 3. Install required dependcies 
 ```bash 
-pip intall chatterbot chatterbot_corpus sqlachemy spacy wikipedia
+pip install chatterbot chatterbot_corpus sqlalchemy spacy wikipedia
 pythons -m spacy download en_core_web_sm #(optional for NLP)
 ``` 
 ### Usage 
@@ -44,12 +44,12 @@ Run the chatbot by executing:
 ```bash 
 python3 Chatbot.py
 ```
-Start chating :) 
+Start chatting :) 
 
 
 
 ---
 
 ### **Created by:**
-- **Victoriaaguz & michaelagarciaa** 
-- **Developed by Victoria Guzman & Michael Garcia**.
+- **Victoriaaguz, michaelagarciaa, RapidCancel** 
+- **Developed by Victoria Guzman, Michael Garcia, Andrew Ho**.
