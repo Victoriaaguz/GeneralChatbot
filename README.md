@@ -16,7 +16,7 @@ A **General Q&A Chatbot** built using **Chatterbot**, to provide intelligent res
 - **Python3** 
 - **Chatterbot** (Ai-powered, NLP & response matching)
 - **Chatterbot Corpus** (pre-trained responses) 
-- **SQLlite** (for storing chat history)
+- **SQLite3** (for storing chat history)
 - **spaCy** (optional for better NLP processing)
 - **Wikipedia API** (for real-world knowledge)
 - **Hugging Face Datasets** (for training on everyday conversation and deeper knowledge of more diverse topics)
