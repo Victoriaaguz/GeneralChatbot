@@ -19,6 +19,8 @@ A **General Q&A Chatbot** built using **Chatterbot**, to provide intelligent res
 - **SQLlite** (for storing chat history)
 - **spaCy** (optional for better NLP processing)
 - **Wikipedia API** (for real-world knowledge)
+- **Hugging Face Datasets** (for training on everyday conversation and deeper knowledge of more diverse topics)
+- **Pandas** (for preprocessing the training data into a consistent format)
 
 ## 📌 Installation 
 ### 1. **Clone the Repository** 
@@ -36,7 +38,7 @@ source chatbot_env/bin/activate # for macOS/Linux
 
 ### 3. Install required dependcies 
 ```bash 
-pip install chatterbot chatterbot_corpus sqlalchemy spacy wikipedia
+pip install chatterbot chatterbot_corpus sqlalchemy spacy wikipedia pandas datasets
 pythons -m spacy download en_core_web_sm #(optional for NLP)
 ``` 
 ### Usage 
