@@ -1,5 +1,6 @@
 # ===================================================================================
 # NOTE: This file will load two datasets, preprocess and merge them into a .csv file
+# If you want to add more datasets using the load_dataset() function, edit here
 # ===================================================================================
 from datasets import load_dataset
 import pandas as pd
