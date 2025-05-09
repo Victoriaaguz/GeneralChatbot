@@ -24,7 +24,8 @@ A **General Q&A Chatbot** built using **Chatterbot**, to provide intelligent res
 
 ## 📌 Installation 
 ### 1. **Clone the Repository** 
-```bash 
+```bash
+#For macOS / Linux:
 git clone https://github.com/Victoriaaguz/GeneralChatbot.git
 cd qna-chatbot
 
