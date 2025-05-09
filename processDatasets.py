@@ -5,27 +5,33 @@
 from datasets import load_dataset
 import pandas as pd
 
-def process_datasets():    
-    # Load the training splits
-    everyday_conversations = load_dataset("HuggingFaceTB/everyday-conversations-llama3.1-2k", split="train")
+def process_datasets():
+    # Corrected splits
+    everyday_conversations = load_dataset("HuggingFaceTB/everyday-conversations-llama3.1-2k", split="train_sft")
     topical_chat = load_dataset("Conversational-Reasoning/Topical-Chat", split="train")
 
-    # Insert into Pandas' DataFrame
-    df_everyday = pd.DataFrame(everyday_conversations["messages"])
-    df_topical = pd.DataFrame(topical_chat["content"])
+    # Convert to DataFrames
+    df_everyday = pd.DataFrame(everyday_conversations)
+    df_topical = pd.DataFrame(topical_chat)
 
-    # Standardize column names
-    df_everyday.rename(columns={"messages": "msgContents"}, inplace=True)
-    df_topical.rename(columns={"content": "msgContents"}, inplace=True)
+    # Extract and clean 'messages'
+    df_everyday["msgContents"] = df_everyday["messages"].apply(
+        lambda x: [msg["content"].strip().lower() for msg in x]
+    )
+    
+    df_topical["msgContents"] = df_topical["content"].apply(
+        lambda x: [msg["message"].strip().lower() for msg in x]
+    )
 
-    # Reformat text (lowercase, remove extra whitespace)
-    df_everyday["msgContents"] = df_everyday["msgContents"].apply(lambda x: [msg["content"].strip().lower() for msg in x])
-    df_topical["msgContents"] = df_topical["msgContents"].apply(lambda x: [msg["message"].strip().lower() for msg in x])
 
-    # Merge the datasets
+    # Keep only the cleaned columns
+    df_everyday = df_everyday[["msgContents"]]
+    df_topical = df_topical[["msgContents"]]
+
+    # Merge both
     df_combined = pd.concat([df_everyday, df_topical], ignore_index=True)
 
-    # Save as .csv
+    # Save to CSV
     df_combined.to_csv("processedDatasets.csv", index=False)
-
-    print("Preprocessing complete! Saved as 'processedDatasets.csv'.")
+    df_everyday.to_csv("processedDatasets.csv", index=False)
+    print("✅ Preprocessing complete! Saved as 'processedDatasets.csv'.")

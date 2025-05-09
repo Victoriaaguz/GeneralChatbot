@@ -20,7 +20,7 @@ if not os.path.exists("processedDatasets.csv"):
     process_datasets()
 
 # Load the datasets from the .csv file
-dataFrame = pd.read_csv("processedDatasets.csv")
+dataFrame = pd.read_csv("/Users/victoria/chatbot_env/processedDatasets.csv")
 datasets = dataFrame["msgContents"].tolist()
 
 # Train the chatbot
