@@ -38,8 +38,17 @@ source chatbot_env/bin/activate # for macOS/Linux
 
 ### 3. Install required dependcies 
 ```bash 
-pip install chatterbot chatterbot_corpus sqlalchemy spacy wikipedia pandas datasets
-pythons -m spacy download en_core_web_sm #(optional for NLP)
+pip install chatterbot chatterbot_corpus sqlalchemy spacy wikipedia pandas datasets beautifulsoup4 huggingface_hub pyarrow tqdm
+python3 -m spacy download en_core_web_sm  # Optional for NLP processing
+
+# for Windows (CMD)
+python -m venv chatbot_env
+chatbot_env\Scripts\activate.bat
+ 
+#for windows (Powershell)
+python -m venv chatbot_env
+chatbot_env\Scripts\Activate.ps1
+
 ``` 
 ### Usage 
 Run the chatbot by executing: 
